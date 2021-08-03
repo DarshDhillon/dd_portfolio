@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import ContactBox from './components/ContactBox/ContactBox';
+import Header from './components/Header/Header';
+import GlobalStyle from './utils/GlobalStyle';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Header />
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4rem' }}>
+        <ContactBox />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
