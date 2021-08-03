@@ -6,10 +6,11 @@ import ContactForm from './ContactForm';
 
 const ContactBox = () => {
   const [phoneNumberBox, setShowPhoneNumberbox] = useState(false);
+  const [blurElement, setBlurElement] = useState(false);
 
   return (
     <BoxContainer>
-      <HeadingWrapper>
+      <HeadingWrapper $blurElement={blurElement}>
         <BoxHeading>Get in touch</BoxHeading>
         <CTAWrapper>
           <CTAMessage>Call, email, or drop me a message below</CTAMessage>
@@ -23,7 +24,7 @@ const ContactBox = () => {
           </CTAIconsWrapper>
         </CTAWrapper>
       </HeadingWrapper>
-      <ContactForm />
+      <ContactForm blurElement={blurElement} setBlurElement={setBlurElement} />
       <PhoneNumberBox $fade={phoneNumberBox}>07889 732764</PhoneNumberBox>
     </BoxContainer>
   );
@@ -44,20 +45,28 @@ const HeadingWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  -webkit-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+  -moz-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+  -o-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+  -ms-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+  filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
 `;
 
 const BoxHeading = styled.h1``;
 
 const CTAWrapper = styled.div``;
 
-const CTAMessage = styled.p``;
+const CTAMessage = styled.p`
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+`;
 
 const CTAIconsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   width: 50%;
   margin: 0 auto;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #000;
 `;
 

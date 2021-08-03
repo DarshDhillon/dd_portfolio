@@ -1,17 +1,92 @@
 import styled from 'styled-components';
+import { useState } from 'react';
+import axios from 'axios';
 
-const ContactForm = () => {
+const SHEET_BEST_URL =
+  'https://sheet.best/api/sheets/96887a74-3ce1-492f-a009-6239eab7a7cb';
+
+const ContactForm = ({ setBlurElement, blurElement }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const [sentAction, setSentAction] = useState({
+    buttonText: 'Send',
+    shakeAnimation: false,
+  });
+
+  const handleFormData = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleContactBoxEffect = () => {
+    setSentAction({ buttonText: 'Thanks!', shakeAnimation: true });
+
+    setBlurElement((prev) => !prev);
+
+    setTimeout(() => {
+      setSentAction({ buttonText: 'Send', shakeAnimation: false });
+      setBlurElement((prev) => !prev);
+    }, 4000);
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log('submitted');
+    axios
+      .post(SHEET_BEST_URL, formData)
+      .then(() => {
+        handleContactBoxEffect();
+      })
+      .catch((e) => {
+        console.error(e);
+      })
+      .finally(() =>
+        setFormData(() => ({
+          name: '',
+          email: '',
+          message: '',
+        }))
+      );
   };
 
   return (
     <Form onSubmit={handleFormSubmit}>
-      <Input required autoComplete='off' placeholder='Name' />
-      <Input required autoComplete='off' placeholder='Email' />
-      <TextArea required rows='5' autoComplete='off' placeholder='Message' />
-      <SendButton type='submit'>Send</SendButton>
+      <Input
+        $blurElement={blurElement}
+        onChange={handleFormData}
+        name='name'
+        value={formData.name}
+        required
+        autoComplete='off'
+        placeholder='Name'
+      />
+      <Input
+        $blurElement={blurElement}
+        onChange={handleFormData}
+        name='email'
+        value={formData.email}
+        required
+        autoComplete='off'
+        placeholder='Email'
+      />
+      <TextArea
+        $blurElement={blurElement}
+        onChange={handleFormData}
+        name='message'
+        value={formData.message}
+        required
+        rows='5'
+        autoComplete='off'
+        placeholder='Message'
+      />
+      <SendButton $animateButton={sentAction.shakeAnimation} type='submit'>
+        {sentAction.buttonText}
+      </SendButton>
     </Form>
   );
 };
@@ -21,7 +96,7 @@ export default ContactForm;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 2rem;
 `;
 
 const Input = styled.input`
@@ -29,6 +104,11 @@ const Input = styled.input`
   background-color: lightgrey;
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  -webkit-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+  -moz-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+  -o-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+  -ms-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+  filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
 `;
 
 const TextArea = styled.textarea`
@@ -36,12 +116,62 @@ const TextArea = styled.textarea`
   font-size: 1.5rem;
   outline: none;
   resize: none;
+  -webkit-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+  -moz-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+  -o-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+  -ms-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+  filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
 `;
 
 const SendButton = styled.button`
   font-size: 1.5rem;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   width: 30%;
   margin: 0 auto;
   margin-top: 1rem;
+  cursor: pointer;
+
+  animation: ${({ $animateButton }) => $animateButton && 'shake 0.5s'};
+  animation-iteration-count: infinite;
+
+  @keyframes shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+      transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+      transform: translate(1px, -2px) rotate(-1deg);
+    }
+  }
+
+  :hover {
+    background-color: green;
+    color: #fff;
+  }
 `;

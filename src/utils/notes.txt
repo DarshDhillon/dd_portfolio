@@ -1,0 +1,5 @@
+    -webkit-filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
+    -moz-filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
+    -o-filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
+    -ms-filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
+    filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
