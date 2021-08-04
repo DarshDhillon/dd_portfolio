@@ -57,6 +57,7 @@ const ContactForm = ({ setBlurElement, blurElement }) => {
   return (
     <Form onSubmit={handleFormSubmit}>
       <Input
+        type='text'
         $blurElement={blurElement}
         onChange={handleFormData}
         name='name'
@@ -66,6 +67,7 @@ const ContactForm = ({ setBlurElement, blurElement }) => {
         placeholder='Name'
       />
       <Input
+        type='email'
         $blurElement={blurElement}
         onChange={handleFormData}
         name='email'
@@ -75,6 +77,7 @@ const ContactForm = ({ setBlurElement, blurElement }) => {
         placeholder='Email'
       />
       <TextArea
+        type='text'
         $blurElement={blurElement}
         onChange={handleFormData}
         name='message'
