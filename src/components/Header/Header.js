@@ -16,6 +16,10 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
+  z-index: 999;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   height: 5rem;
   width: 100%;
   /* padding: 1rem; */

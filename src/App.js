@@ -2,6 +2,8 @@ import GlobalStyle from './utils/GlobalStyle';
 import Header from './components/Header/Header';
 import ContactBox from './components/ContactBox/ContactBox';
 import Projects from './components/ProjectsShowcase/Projects';
+import LearningTechs from './components/LearningTechs/LearningTechs';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -18,7 +20,9 @@ const App = () => {
         }}
       >
         <Projects />
+        <LearningTechs />
         <ContactBox />
+        <Footer />
       </div>
     </>
   );

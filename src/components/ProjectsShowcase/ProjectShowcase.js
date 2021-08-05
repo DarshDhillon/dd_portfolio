@@ -5,8 +5,14 @@ import { GiAerialSignal } from 'react-icons/gi';
 const ProjectShowcase = ({ selectedProject }) => {
   return (
     <ProjectContainer>
-      <ProjectWrapper $reverseStyling={selectedProject.reverseStyling}>
-        <ProjectGallery src={selectedProject.projectGallery} alt='test_gif' />
+      <ProjectWrapper>
+        <ProjectGallery
+          type='video/mp4'
+          src={selectedProject.projectGallery}
+          autoPlay
+          muted
+          loop
+        />
         <ProjectInfoWrapper>
           <ProjectDescription>
             {selectedProject.projectDescription}
@@ -14,7 +20,7 @@ const ProjectShowcase = ({ selectedProject }) => {
           <ProjectHighlights>
             <ul>
               {selectedProject.projectHighlights.map((highlight) => (
-                <li>{highlight}</li>
+                <li key={highlight.id}>{highlight.highlight}</li>
               ))}
             </ul>
           </ProjectHighlights>
@@ -27,7 +33,11 @@ const ProjectShowcase = ({ selectedProject }) => {
               <AerialLogo />
               Live
             </ViewButton>
-            <ViewButton>
+            <ViewButton
+              href={selectedProject.projectGithubURL}
+              rel='noreferrer'
+              target='_blank'
+            >
               <GitHubLogo />
               Code
             </ViewButton>
@@ -48,12 +58,12 @@ const ProjectContainer = styled.div`
 
 const ProjectWrapper = styled.div`
   display: flex;
-  flex-direction: ${({ $reverseStyling }) =>
-    $reverseStyling ? 'row-reverse' : 'row'};
   justify-content: space-around;
+  align-items: center;
 `;
 
-const ProjectGallery = styled.img`
+const ProjectGallery = styled.video`
+  height: 300px;
   width: 500px;
 `;
 
@@ -65,6 +75,7 @@ const ProjectInfoWrapper = styled.div`
 `;
 
 const ProjectDescription = styled.h2`
+  height: 100px;
   text-align: center;
   margin-bottom: 1rem;
 `;

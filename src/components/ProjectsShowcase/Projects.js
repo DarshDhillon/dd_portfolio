@@ -10,6 +10,7 @@ const Projects = () => {
   return (
     <Container>
       <ProjectSelectorBar
+        selectedProject={selectedProject}
         projectData={projectData}
         setSelectedProject={setSelectedProject}
       />
