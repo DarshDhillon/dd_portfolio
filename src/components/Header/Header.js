@@ -16,6 +16,7 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
+  background-color: #000000ba;
   z-index: 999;
   position: -webkit-sticky;
   position: sticky;
@@ -23,7 +24,6 @@ const HeaderContainer = styled.header`
   height: 5rem;
   width: 100%;
   /* padding: 1rem; */
-  background-color: orange;
 `;
 
 const HeaderWrapper = styled.div`

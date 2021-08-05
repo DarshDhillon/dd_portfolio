@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styled from 'styled-components';
 import { HiOutlineMail } from 'react-icons/hi';
 import { HiOutlinePhone } from 'react-icons/hi';
 import ContactForm from './ContactForm';
+import { AppContext } from '../../context/ContextProvider';
 
 const ContactBox = () => {
   const [phoneNumberBox, setShowPhoneNumberbox] = useState(false);
   const [blurElement, setBlurElement] = useState(false);
+  const { contactRef } = useContext(AppContext);
 
   return (
-    <BoxContainer>
+    <BoxContainer ref={contactRef}>
       <HeadingWrapper $blurElement={blurElement}>
         <BoxHeading>Get in touch</BoxHeading>
         <CTAWrapper>

@@ -1,3 +1,4 @@
+import ContextProvider from './context/ContextProvider';
 import GlobalStyle from './utils/GlobalStyle';
 import Header from './components/Header/Header';
 import ContactBox from './components/ContactBox/ContactBox';
@@ -7,7 +8,7 @@ import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
-    <>
+    <ContextProvider>
       <GlobalStyle />
       <Header />
       <div
@@ -24,7 +25,7 @@ const App = () => {
         <ContactBox />
         <Footer />
       </div>
-    </>
+    </ContextProvider>
   );
 };
 

@@ -26,16 +26,18 @@ const FooterContainer = styled.footer`
 `;
 
 const FooterWrapper = styled.div`
-  padding: 1rem 2rem;
+  padding: 2rem;
   display: flex;
 `;
 
 const CopyWright = styled.p`
   font-size: 1.1rem;
+  color: #fff;
 `;
 
 const ScrollToTopIcon = styled(IoIosArrowDropup)`
   cursor: pointer;
   font-size: 1.5rem;
   margin: 0 1rem;
+  color: #fff;
 `;
