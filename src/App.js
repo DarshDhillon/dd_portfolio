@@ -5,6 +5,7 @@ import ContactBox from './components/ContactBox/ContactBox';
 import Projects from './components/ProjectsShowcase/Projects';
 import LearningTechs from './components/LearningTechs/LearningTechs';
 import Footer from './components/Footer/Footer';
+import TechnologiesBar from './components/TechnologiesBar/TechnologiesBar';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         }}
       >
         <Projects />
+        <TechnologiesBar />
         <LearningTechs />
         <ContactBox />
         <Footer />

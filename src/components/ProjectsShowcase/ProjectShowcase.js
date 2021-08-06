@@ -1,10 +1,14 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
 import { FaGithub } from 'react-icons/fa';
 import { GiAerialSignal } from 'react-icons/gi';
+import { AppContext } from '../../context/ContextProvider';
 
 const ProjectShowcase = ({ selectedProject }) => {
+  const { themeColor } = useContext(AppContext);
+
   return (
-    <ProjectContainer>
+    <ProjectContainer $themeColor={themeColor}>
       <ProjectWrapper>
         <ProjectGallery
           type='video/mp4'
@@ -14,7 +18,7 @@ const ProjectShowcase = ({ selectedProject }) => {
           loop
         />
         <ProjectInfoWrapper>
-          <ProjectDescription>
+          <ProjectDescription $themeColor={themeColor}>
             {selectedProject.projectDescription}
           </ProjectDescription>
           <ProjectHighlights>
@@ -51,9 +55,11 @@ const ProjectShowcase = ({ selectedProject }) => {
 export default ProjectShowcase;
 
 const ProjectContainer = styled.div`
-  background-color: pink;
+  background-color: ${({ $themeColor }) =>
+    $themeColor === 'light' ? 'pink' : 'purple'};
   padding: 2rem;
   width: 60%;
+  transition: all 0.3s ease;
 `;
 
 const ProjectWrapper = styled.div`
@@ -75,9 +81,11 @@ const ProjectInfoWrapper = styled.div`
 `;
 
 const ProjectDescription = styled.h2`
+  color: ${({ $themeColor }) => ($themeColor === 'light' ? '#000' : '#fff')};
   height: 100px;
   text-align: center;
   margin-bottom: 1rem;
+  transition: all 0.3s ease;
 `;
 
 const ProjectHighlights = styled.div`
@@ -101,13 +109,9 @@ const ViewButton = styled.a`
   font-size: 1.2rem;
   padding: 0.8rem 1.5rem;
   cursor: pointer;
-  background-color: #fff;
+  background-color: var(--mainGreen);
   color: #000;
   text-decoration: none;
-
-  :hover {
-    background-color: lightgreen;
-  }
 `;
 
 const AerialLogo = styled(GiAerialSignal)`

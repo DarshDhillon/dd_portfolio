@@ -10,7 +10,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterWrapper>
         <ScrollToTopIcon onClick={scrollToTop} />
-        <CopyWright>&copy;Darsh Dhillon {new Date().getFullYear()}</CopyWright>
+        <CopyWright>&copy; Darsh Dhillon {new Date().getFullYear()}</CopyWright>
         <ScrollToTopIcon onClick={scrollToTop} />
       </FooterWrapper>
     </FooterContainer>
@@ -23,10 +23,11 @@ const FooterContainer = styled.footer`
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
 `;
 
 const FooterWrapper = styled.div`
-  padding: 2rem;
   display: flex;
 `;
 

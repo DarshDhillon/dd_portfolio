@@ -38,7 +38,7 @@ const BoxContainer = styled.div`
   position: relative;
   height: 600px;
   width: 600px;
-  background-color: lightblue;
+  background-color: #202529;
 `;
 
 const HeadingWrapper = styled.div`
@@ -54,13 +54,16 @@ const HeadingWrapper = styled.div`
   filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
 `;
 
-const BoxHeading = styled.h1``;
+const BoxHeading = styled.h1`
+  color: #fff;
+`;
 
 const CTAWrapper = styled.div``;
 
 const CTAMessage = styled.p`
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  color: #fff;
 `;
 
 const CTAIconsWrapper = styled.div`
@@ -69,7 +72,6 @@ const CTAIconsWrapper = styled.div`
   width: 50%;
   margin: 0 auto;
   font-size: 2.5rem;
-  color: #000;
 `;
 
 const Anchor = styled.a`
@@ -77,23 +79,25 @@ const Anchor = styled.a`
 `;
 
 const EmailIcon = styled(HiOutlineMail)`
-  color: #000;
+  color: #fff;
 `;
 
-const PhoneIcon = styled(HiOutlinePhone)``;
+const PhoneIcon = styled(HiOutlinePhone)`
+  color: #fff;
+`;
 
 const PhoneNumberBox = styled.div`
   border-radius: 1rem;
   text-align: center;
   padding: 0.3rem;
   position: absolute;
-  background-color: #000;
+  background-color: #fff;
   top: 3%;
   left: 50%;
   /* height: 100px; */
   width: 200px;
   font-size: 1.5rem;
-  color: #fff;
+  color: #000;
   transform: translate(-50%, -3%);
   visibility: ${({ $fade }) => ($fade ? 'visible' : 'hidden')};
   opacity: ${({ $fade }) => ($fade ? '1' : '0')};

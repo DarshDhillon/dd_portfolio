@@ -3,6 +3,10 @@ import backgroundImage from '../assets/images/dd_port_background2.jpg';
 
 const GlobalStyle = createGlobalStyle`
 
+:root {
+    --mainGreen: #289c6c;
+}
+
 html {
     scroll-behavior: smooth;
 }

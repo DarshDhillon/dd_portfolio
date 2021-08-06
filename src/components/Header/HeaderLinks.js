@@ -6,22 +6,33 @@ const CV_GOOGLE_DOCS_LINK =
   'https://drive.google.com/file/d/14HN7mpJpaBjJchG2IQoInrv5bI0QKVsv/view?usp=sharing';
 
 const HeaderLinks = () => {
-  const { contactRef, projectsRef, handleScrollToElement } =
+  const { contactRef, projectsRef, handleScrollToElement, themeColor } =
     useContext(AppContext);
 
   return (
     <LinksWrapper>
       <LinksList>
-        <LinkItem>About</LinkItem>
-        <LinkItem onClick={() => handleScrollToElement(projectsRef)}>
+        <LinkItem $themeColor={themeColor}>About</LinkItem>
+        <LinkItem
+          $themeColor={themeColor}
+          onClick={() => handleScrollToElement(projectsRef)}
+        >
           Projects
         </LinkItem>
         <LinkItem>
-          <Anchor target='_blank' rel='noreferrer' href={CV_GOOGLE_DOCS_LINK}>
+          <Anchor
+            $themeColor={themeColor}
+            target='_blank'
+            rel='noreferrer'
+            href={CV_GOOGLE_DOCS_LINK}
+          >
             CV
           </Anchor>
         </LinkItem>
-        <LinkItem onClick={() => handleScrollToElement(contactRef)}>
+        <LinkItem
+          $themeColor={themeColor}
+          onClick={() => handleScrollToElement(contactRef)}
+        >
           Contact
         </LinkItem>
       </LinksList>
@@ -47,12 +58,14 @@ const LinksList = styled.ul`
 `;
 
 const LinkItem = styled.li`
-  color: #fff;
+  color: ${({ $themeColor }) => ($themeColor === 'light' ? '#000' : '#fff')};
   cursor: pointer;
   font-size: 1.5rem;
+  transition: all 0.3s;
 `;
 
 const Anchor = styled.a`
   text-decoration: none;
-  color: #fff;
+  color: ${({ $themeColor }) => ($themeColor === 'light' ? '#000' : '#fff')};
+  transition: all 0.3s;
 `;

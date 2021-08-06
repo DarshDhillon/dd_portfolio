@@ -3,3 +3,13 @@
     -o-filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
     -ms-filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
     filter: ${({ $blur }) => ($blur ? 'blur(5px)' : '0px')};
+
+html
+css
+js
+react
+redux
+stlyed components
+sass
+git
+node

@@ -133,6 +133,7 @@ const SendButton = styled.button`
   margin: 0 auto;
   margin-top: 1rem;
   cursor: pointer;
+  background: var(--mainGreen);
 
   animation: ${({ $animateButton }) => $animateButton && 'shake 0.5s'};
   animation-iteration-count: infinite;
@@ -171,10 +172,5 @@ const SendButton = styled.button`
     100% {
       transform: translate(1px, -2px) rotate(-1deg);
     }
-  }
-
-  :hover {
-    background-color: green;
-    color: #fff;
   }
 `;

@@ -1,4 +1,4 @@
-import { createContext, useRef } from 'react';
+import { createContext, useRef, useState } from 'react';
 export const AppContext = createContext();
 
 const ContextProvider = ({ children }) => {
@@ -12,9 +12,17 @@ const ContextProvider = ({ children }) => {
     });
   };
 
+  const [themeColor, setThemeColor] = useState('light');
+
   return (
     <AppContext.Provider
-      value={{ contactRef, projectsRef, handleScrollToElement }}
+      value={{
+        contactRef,
+        projectsRef,
+        themeColor,
+        handleScrollToElement,
+        setThemeColor,
+      }}
     >
       {children}
     </AppContext.Provider>

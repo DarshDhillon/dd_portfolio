@@ -83,7 +83,9 @@ const ProjectLogo = styled.img`
 const ProjectTitle = styled.h2`
   margin-left: 1rem;
   border-bottom: ${({ $projID, $projectID }) =>
-    $projID === $projectID ? '4px solid blue' : '4px solid transparent'};
+    $projID === $projectID
+      ? '4px solid var(--mainGreen)'
+      : '4px solid transparent'};
 
   transition: all 0.3s ease-in-out;
 `;
