@@ -14,10 +14,10 @@ const ThemeToggleSwitch = () => {
         onClick={() =>
           setThemeColor((prev) => (prev === 'light' ? 'dark' : 'light'))
         }
-        for='chk'
+        htmlFor='chk'
       >
-        <MoonIcon />
         <SunIcon />
+        <MoonIcon />
         <LabelBall></LabelBall>
       </Label>
     </Container>
@@ -48,7 +48,7 @@ const Label = styled.label`
 `;
 
 const LabelBall = styled.div`
-  background-color: #504e4e;
+  background-color: var(--mainCharcoal);
   border-radius: 50%;
   position: absolute;
   top: 2px;

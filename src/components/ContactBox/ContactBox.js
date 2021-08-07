@@ -8,14 +8,16 @@ import { AppContext } from '../../context/ContextProvider';
 const ContactBox = () => {
   const [phoneNumberBox, setShowPhoneNumberbox] = useState(false);
   const [blurElement, setBlurElement] = useState(false);
-  const { contactRef } = useContext(AppContext);
+  const { contactRef, themeColor } = useContext(AppContext);
 
   return (
-    <BoxContainer ref={contactRef}>
+    <BoxContainer $themeColor={themeColor} ref={contactRef}>
       <HeadingWrapper $blurElement={blurElement}>
-        <BoxHeading>Get in touch</BoxHeading>
+        <BoxHeading $themeColor={themeColor}>Get in touch</BoxHeading>
         <CTAWrapper>
-          <CTAMessage>Call, email, or drop me a message below</CTAMessage>
+          <CTAMessage $themeColor={themeColor}>
+            Call, email, or drop me a message below
+          </CTAMessage>
           <CTAIconsWrapper>
             <Anchor onClick={() => setShowPhoneNumberbox((prev) => !prev)}>
               <PhoneIcon />
@@ -35,10 +37,16 @@ const ContactBox = () => {
 export default ContactBox;
 
 const BoxContainer = styled.div`
+  margin-top: 12rem;
+  background: ${({ $themeColor }) =>
+    $themeColor === 'light' ? 'var(--glassWhite)' : 'var(--glassCharcoal)'};
+  box-shadow: 0 2px 8px 0 var(--mainGreen);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   position: relative;
-  height: 600px;
+  height: 620px;
   width: 600px;
-  background-color: #202529;
+  transition: all 0.3 ease;
 `;
 
 const HeadingWrapper = styled.div`
@@ -55,7 +63,9 @@ const HeadingWrapper = styled.div`
 `;
 
 const BoxHeading = styled.h1`
-  color: #fff;
+  color: ${({ $themeColor }) =>
+    $themeColor === 'light' ? 'var(--mainCharcoal)' : '#fff'};
+  transition: all 0.3 ease;
 `;
 
 const CTAWrapper = styled.div``;
@@ -63,7 +73,9 @@ const CTAWrapper = styled.div``;
 const CTAMessage = styled.p`
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #fff;
+  color: ${({ $themeColor }) =>
+    $themeColor === 'light' ? 'var(--mainCharcoal)' : '#fff'};
+  transition: all 0.3 ease;
 `;
 
 const CTAIconsWrapper = styled.div`
@@ -79,11 +91,11 @@ const Anchor = styled.a`
 `;
 
 const EmailIcon = styled(HiOutlineMail)`
-  color: #fff;
+  color: var(--mainGreen);
 `;
 
 const PhoneIcon = styled(HiOutlinePhone)`
-  color: #fff;
+  color: var(--mainGreen);
 `;
 
 const PhoneNumberBox = styled.div`

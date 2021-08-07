@@ -1,22 +1,30 @@
 import styled from 'styled-components';
-import hhLogo from '../../assets/images/hh_main_notext.png';
-import shnLogo from '../../assets/images/shn_white.png';
-import ffLogo from '../../assets/images/filmFinder.jpg';
-import weatherChartLogo from '../../assets/images/chartjs.png';
+import { useContext } from 'react';
+import { AppContext } from '../../context/ContextProvider';
+import hhLogoTransparent from '../../assets/images/hh_no_background.png';
+import shnLogoTransparent from '../../assets/images/shn_logo_transparent.png';
+import ffLogoTransparent from '../../assets/images/film_finder_logo_transparent.png';
+import weatherChartLogoTransparent from '../../assets/images/charts_logo_transparent.png';
 
 const ProjectSelectorBar = ({
   setSelectedProject,
   projectData,
   selectedProject,
 }) => {
+  const { themeColor } = useContext(AppContext);
+
   return (
     <ProjectSelectorContainer>
       <ProjectSelectorWrapper>
         <ProjectTitleAndLogoWrapper
           onClick={() => setSelectedProject(projectData[0])}
         >
-          <ProjectLogo src={hhLogo} alt='hh_logo' />
-          <ProjectTitle $projID={1} $projectID={selectedProject.id}>
+          <ProjectLogo src={hhLogoTransparent} alt='hh_logo' />
+          <ProjectTitle
+            $themeColor={themeColor}
+            $projID={1}
+            $projectID={selectedProject.id}
+          >
             happyhealth
           </ProjectTitle>
         </ProjectTitleAndLogoWrapper>
@@ -25,8 +33,12 @@ const ProjectSelectorBar = ({
           $projectID={selectedProject.id}
           onClick={() => setSelectedProject(projectData[1])}
         >
-          <ProjectLogo src={shnLogo} alt='vac_logo' />
-          <ProjectTitle $projID={2} $projectID={selectedProject.id}>
+          <ProjectLogo src={shnLogoTransparent} alt='vac_logo' />
+          <ProjectTitle
+            $themeColor={themeColor}
+            $projID={2}
+            $projectID={selectedProject.id}
+          >
             Vaccine Booker
           </ProjectTitle>
         </ProjectTitleAndLogoWrapper>
@@ -35,8 +47,12 @@ const ProjectSelectorBar = ({
           $projectID={selectedProject.id}
           onClick={() => setSelectedProject(projectData[2])}
         >
-          <ProjectLogo src={ffLogo} alt='ff_logo' />
-          <ProjectTitle $projID={3} $projectID={selectedProject.id}>
+          <ProjectLogo src={ffLogoTransparent} alt='ff_logo' />
+          <ProjectTitle
+            $themeColor={themeColor}
+            $projID={3}
+            $projectID={selectedProject.id}
+          >
             Film Finder
           </ProjectTitle>
         </ProjectTitleAndLogoWrapper>
@@ -45,8 +61,12 @@ const ProjectSelectorBar = ({
           $projectID={selectedProject.id}
           onClick={() => setSelectedProject(projectData[3])}
         >
-          <ProjectLogo src={weatherChartLogo} alt='chart_logo' />
-          <ProjectTitle $projID={4} $projectID={selectedProject.id}>
+          <ProjectLogo src={weatherChartLogoTransparent} alt='chart_logo' />
+          <ProjectTitle
+            $themeColor={themeColor}
+            $projID={4}
+            $projectID={selectedProject.id}
+          >
             24hr Charts
           </ProjectTitle>
         </ProjectTitleAndLogoWrapper>
@@ -58,8 +78,7 @@ const ProjectSelectorBar = ({
 export default ProjectSelectorBar;
 
 const ProjectSelectorContainer = styled.div`
-  background-color: pink;
-  width: 50%;
+  width: 100%;
   padding: 1rem 0rem;
 `;
 
@@ -81,11 +100,12 @@ const ProjectLogo = styled.img`
 `;
 
 const ProjectTitle = styled.h2`
-  margin-left: 1rem;
+  color: ${({ $themeColor }) =>
+    $themeColor === 'light' ? 'var(--mainCharcoal)' : '#fff'};
   border-bottom: ${({ $projID, $projectID }) =>
     $projID === $projectID
-      ? '4px solid var(--mainGreen)'
-      : '4px solid transparent'};
+      ? '5px solid var(--mainGreen)'
+      : '5px solid transparent'};
 
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
 `;

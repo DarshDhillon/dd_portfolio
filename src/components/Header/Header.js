@@ -56,5 +56,4 @@ const HeaderWrapper = styled.div`
 
 const Logo = styled.img`
   height: inherit;
-  cursor: pointer;
 `;

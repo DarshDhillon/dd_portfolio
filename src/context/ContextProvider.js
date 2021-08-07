@@ -4,6 +4,7 @@ export const AppContext = createContext();
 const ContextProvider = ({ children }) => {
   const contactRef = useRef(null);
   const projectsRef = useRef(null);
+  const aboutRef = useRef(null);
 
   const handleScrollToElement = (elementRef) => {
     window.scrollTo({
@@ -12,13 +13,14 @@ const ContextProvider = ({ children }) => {
     });
   };
 
-  const [themeColor, setThemeColor] = useState('light');
+  const [themeColor, setThemeColor] = useState('dark');
 
   return (
     <AppContext.Provider
       value={{
         contactRef,
         projectsRef,
+        aboutRef,
         themeColor,
         handleScrollToElement,
         setThemeColor,

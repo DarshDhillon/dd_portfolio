@@ -20,11 +20,11 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.footer`
+  margin-top: 6rem;
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 1rem 2rem;
-  margin-top: 1rem;
 `;
 
 const FooterWrapper = styled.div`

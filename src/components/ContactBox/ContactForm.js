@@ -103,8 +103,8 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
+  padding: 0.3rem;
   outline: none;
-  background-color: lightgrey;
   font-size: 1.5rem;
   margin-bottom: 1rem;
   -webkit-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
@@ -115,7 +115,7 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-  background-color: lightgrey;
+  padding: 0.3rem;
   font-size: 1.5rem;
   outline: none;
   resize: none;
@@ -134,6 +134,7 @@ const SendButton = styled.button`
   margin-top: 1rem;
   cursor: pointer;
   background: var(--mainGreen);
+  color: #fff;
 
   animation: ${({ $animateButton }) => $animateButton && 'shake 0.5s'};
   animation-iteration-count: infinite;

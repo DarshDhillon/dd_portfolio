@@ -12,15 +12,15 @@ const TechnologiesBar = () => {
   return (
     <TechLogosContainer>
       <TechLogosWrapper>
-        <HTMLIcon />
-        <CSSIcon />
-        <JSIcon />
-        <ReactIcon />
-        <ReduxIcon />
-        <StyledCIcon />
-        <SassIcon />
-        <NodeIcon />
-        <GitIcon />
+        <JSIcon title='Javascript' />
+        <StyledCIcon title='Styled Components' />
+        <ReactIcon title='ReactJS' />
+        <ReduxIcon title='Redux' />
+        <HTMLIcon title='HMTL5' />
+        <SassIcon title='SASS' />
+        <NodeIcon title='Node.js' />
+        <GitIcon title='Git' />
+        <CSSIcon title='CSS' />
       </TechLogosWrapper>
     </TechLogosContainer>
   );
@@ -28,12 +28,18 @@ const TechnologiesBar = () => {
 
 export default TechnologiesBar;
 
-const TechLogosContainer = styled.div``;
+const TechLogosContainer = styled.div`
+  margin-top: 5rem;
+  padding: 2rem;
+  width: 60%;
+`;
 
 const TechLogosWrapper = styled.div`
   display: flex;
-  color: #fff;
-  font-size: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  color: lightgrey;
+  font-size: 2.5rem;
 `;
 
 const HTMLIcon = styled(FaHtml5)``;
@@ -46,7 +52,9 @@ const ReactIcon = styled(FaReact)``;
 
 const ReduxIcon = styled(SiRedux)``;
 
-const StyledCIcon = styled(SiStyledComponents)``;
+const StyledCIcon = styled(SiStyledComponents)`
+  font-size: 3rem;
+`;
 
 const SassIcon = styled(FaSass)``;
 

@@ -13,7 +13,7 @@ const ProjectShowcase = ({ selectedProject }) => {
         <ProjectGallery
           type='video/mp4'
           src={selectedProject.projectGallery}
-          autoPlay
+          // autoPlay
           muted
           loop
         />
@@ -21,7 +21,7 @@ const ProjectShowcase = ({ selectedProject }) => {
           <ProjectDescription $themeColor={themeColor}>
             {selectedProject.projectDescription}
           </ProjectDescription>
-          <ProjectHighlights>
+          <ProjectHighlights $themeColor={themeColor}>
             <ul>
               {selectedProject.projectHighlights.map((highlight) => (
                 <li key={highlight.id}>{highlight.highlight}</li>
@@ -55,10 +55,9 @@ const ProjectShowcase = ({ selectedProject }) => {
 export default ProjectShowcase;
 
 const ProjectContainer = styled.div`
-  background-color: ${({ $themeColor }) =>
-    $themeColor === 'light' ? 'pink' : 'purple'};
+  margin-top: 2rem;
   padding: 2rem;
-  width: 60%;
+  width: 100%;
   transition: all 0.3s ease;
 `;
 
@@ -90,8 +89,11 @@ const ProjectDescription = styled.h2`
 
 const ProjectHighlights = styled.div`
   padding: 1rem;
+  color: ${({ $themeColor }) =>
+    $themeColor === 'light' ? 'var(--mainCharcoal)' : '#fff'};
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  transition: all 0.3s ease;
 `;
 
 const ButtonWrapper = styled.div`
@@ -110,7 +112,7 @@ const ViewButton = styled.a`
   padding: 0.8rem 1.5rem;
   cursor: pointer;
   background-color: var(--mainGreen);
-  color: #000;
+  color: #fff;
   text-decoration: none;
 `;
 

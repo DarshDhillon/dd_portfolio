@@ -5,6 +5,9 @@ const GlobalStyle = createGlobalStyle`
 
 :root {
     --mainGreen: #289c6c;
+    --mainCharcoal: #202529;
+    --glassCharcoal: rgba(32, 37, 41, 0.4);
+    --glassWhite: rgba(255, 255, 255, 0.7);
 }
 
 html {

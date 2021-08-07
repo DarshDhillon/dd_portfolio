@@ -1,32 +1,27 @@
 import ContextProvider from './context/ContextProvider';
 import GlobalStyle from './utils/GlobalStyle';
 import Header from './components/Header/Header';
-import ContactBox from './components/ContactBox/ContactBox';
+import BackgroundTintWrapper from './components/BackgroundTintWrapper/BackgroundTintWrapper';
+import About from './components/About/About';
 import Projects from './components/ProjectsShowcase/Projects';
+import TechnologiesBar from './components/TechnologiesBar/TechnologiesBar';
 import LearningTechs from './components/LearningTechs/LearningTechs';
 import Footer from './components/Footer/Footer';
-import TechnologiesBar from './components/TechnologiesBar/TechnologiesBar';
+import ContactBox from './components/ContactBox/ContactBox';
 
 const App = () => {
   return (
     <ContextProvider>
       <GlobalStyle />
       <Header />
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginTop: '4rem',
-        }}
-      >
-        <Projects />
+      <BackgroundTintWrapper>
+        <About />
         <TechnologiesBar />
+        <Projects />
         <LearningTechs />
         <ContactBox />
         <Footer />
-      </div>
+      </BackgroundTintWrapper>
     </ContextProvider>
   );
 };
