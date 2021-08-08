@@ -31,11 +31,15 @@ const Container = styled.div`
   box-shadow: 0 2px 8px 0 var(--mainGreen);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   /* margin: 0 auto; */
   justify-content: center;
   align-items: center;
   transition: all 0.3 ease;
+
+  @media screen and (max-width: 1500px) {
+    width: 85%;
+  }
 `;

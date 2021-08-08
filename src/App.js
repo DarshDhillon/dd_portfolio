@@ -3,11 +3,11 @@ import GlobalStyle from './utils/GlobalStyle';
 import Header from './components/Header/Header';
 import BackgroundTintWrapper from './components/BackgroundTintWrapper/BackgroundTintWrapper';
 import About from './components/About/About';
-import Projects from './components/ProjectsShowcase/Projects';
 import TechnologiesBar from './components/TechnologiesBar/TechnologiesBar';
+import Projects from './components/ProjectsShowcase/Projects';
 import LearningTechs from './components/LearningTechs/LearningTechs';
-import Footer from './components/Footer/Footer';
 import ContactBox from './components/ContactBox/ContactBox';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (

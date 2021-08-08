@@ -97,6 +97,21 @@ const ProjectTitleAndLogoWrapper = styled.div`
 const ProjectLogo = styled.img`
   height: 100px;
   width: 100px;
+
+  @media screen and (max-width: 1200px) {
+    height: 75px;
+    width: 75px;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 50px;
+    width: 50px;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 30px;
+    width: 30px;
+  }
 `;
 
 const ProjectTitle = styled.h2`
@@ -104,8 +119,20 @@ const ProjectTitle = styled.h2`
     $themeColor === 'light' ? 'var(--mainCharcoal)' : '#fff'};
   border-bottom: ${({ $projID, $projectID }) =>
     $projID === $projectID
-      ? '5px solid var(--mainGreen)'
-      : '5px solid transparent'};
+      ? '4px solid var(--mainGreen)'
+      : '4px solid transparent'};
 
   transition: all 0.3s ease;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.5rem;
+  }
 `;

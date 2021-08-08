@@ -34,11 +34,27 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   transition: all 0.3 ease;
+
+  @media screen and (max-width: 1200px) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 1rem 2.5rem;
+  }
 `;
 
 const Heading = styled.h1`
   font-size: 8rem;
   color: var(--mainGreen);
+
+  @media screen and (max-width: 768px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 2rem;
+  }
 `;
 
 const SubTextWrapper = styled.div`
@@ -52,4 +68,11 @@ const SubText = styled.h2`
   font-size: 1.5rem;
   color: ${({ $themeColor }) =>
     $themeColor === 'light' ? 'var(--mainCharcoal)' : '#fff'};
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 0.7rem;
+  }
 `;

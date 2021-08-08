@@ -12,7 +12,7 @@ const TechnologiesBar = () => {
   return (
     <TechLogosContainer>
       <TechLogosWrapper>
-        <JSIcon title='Javascript' />
+        <JSIcon title='JavaScript' />
         <StyledCIcon title='Styled Components' />
         <ReactIcon title='ReactJS' />
         <ReduxIcon title='Redux' />
@@ -30,8 +30,15 @@ export default TechnologiesBar;
 
 const TechLogosContainer = styled.div`
   margin-top: 5rem;
-  padding: 2rem;
+  padding: 2rem 1rem;
   width: 60%;
+
+  @media screen and (max-width: 1200px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 const TechLogosWrapper = styled.div`
@@ -40,6 +47,10 @@ const TechLogosWrapper = styled.div`
   align-items: center;
   color: lightgrey;
   font-size: 2.5rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const HTMLIcon = styled(FaHtml5)``;

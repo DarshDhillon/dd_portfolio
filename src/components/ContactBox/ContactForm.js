@@ -112,6 +112,10 @@ const Input = styled.input`
   -o-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
   -ms-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
   filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
+  }
 `;
 
 const TextArea = styled.textarea`
@@ -124,6 +128,10 @@ const TextArea = styled.textarea`
   -o-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
   -ms-filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
   filter: ${({ $blurElement }) => ($blurElement ? 'blur(5px)' : '0px')};
+
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
+  }
 `;
 
 const SendButton = styled.button`
@@ -173,5 +181,9 @@ const SendButton = styled.button`
     100% {
       transform: translate(1px, -2px) rotate(-1deg);
     }
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
   }
 `;

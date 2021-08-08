@@ -34,6 +34,10 @@ const FooterWrapper = styled.div`
 const CopyWright = styled.p`
   font-size: 1.1rem;
   color: #fff;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const ScrollToTopIcon = styled(IoIosArrowDropup)`
@@ -41,4 +45,8 @@ const ScrollToTopIcon = styled(IoIosArrowDropup)`
   font-size: 1.5rem;
   margin: 0 1rem;
   color: #fff;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;

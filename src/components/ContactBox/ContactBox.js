@@ -37,6 +37,7 @@ const ContactBox = () => {
 export default ContactBox;
 
 const BoxContainer = styled.div`
+  /* border: 1px solid red; */
   margin-top: 12rem;
   background: ${({ $themeColor }) =>
     $themeColor === 'light' ? 'var(--glassWhite)' : 'var(--glassCharcoal)'};
@@ -47,6 +48,14 @@ const BoxContainer = styled.div`
   height: 620px;
   width: 600px;
   transition: all 0.3 ease;
+
+  @media screen and (max-width: 768px) {
+    width: 450px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 300px;
+  }
 `;
 
 const HeadingWrapper = styled.div`
@@ -66,16 +75,25 @@ const BoxHeading = styled.h1`
   color: ${({ $themeColor }) =>
     $themeColor === 'light' ? 'var(--mainCharcoal)' : '#fff'};
   transition: all 0.3 ease;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const CTAWrapper = styled.div``;
 
 const CTAMessage = styled.p`
+  text-align: center;
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: ${({ $themeColor }) =>
     $themeColor === 'light' ? 'var(--mainCharcoal)' : '#fff'};
   transition: all 0.3 ease;
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const CTAIconsWrapper = styled.div`
@@ -114,4 +132,8 @@ const PhoneNumberBox = styled.div`
   visibility: ${({ $fade }) => ($fade ? 'visible' : 'hidden')};
   opacity: ${({ $fade }) => ($fade ? '1' : '0')};
   transition: all 0.3s ease-in-out;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1rem;
+  }
 `;

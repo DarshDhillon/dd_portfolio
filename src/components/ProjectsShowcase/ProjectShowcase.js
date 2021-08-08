@@ -22,11 +22,11 @@ const ProjectShowcase = ({ selectedProject }) => {
             {selectedProject.projectDescription}
           </ProjectDescription>
           <ProjectHighlights $themeColor={themeColor}>
-            <ul>
+            <ProjectList>
               {selectedProject.projectHighlights.map((highlight) => (
                 <li key={highlight.id}>{highlight.highlight}</li>
               ))}
-            </ul>
+            </ProjectList>
           </ProjectHighlights>
           <ButtonWrapper>
             <ViewButton
@@ -55,8 +55,9 @@ const ProjectShowcase = ({ selectedProject }) => {
 export default ProjectShowcase;
 
 const ProjectContainer = styled.div`
+  /* border: 1px solid red; */
   margin-top: 2rem;
-  padding: 2rem;
+  padding: 2rem 1rem;
   width: 100%;
   transition: all 0.3s ease;
 `;
@@ -65,26 +66,70 @@ const ProjectWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
 `;
 
 const ProjectGallery = styled.video`
   height: 300px;
   width: 500px;
+
+  @media screen and (max-width: 1200px) {
+    height: 390px;
+    width: 650px;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 250px;
+    width: 400px;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 150px;
+    width: 250px;
+  }
 `;
 
 const ProjectInfoWrapper = styled.div`
   /* border: 1px solid blue; */
+  padding: 1rem 0rem;
   width: 40%;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 1200px) {
+    margin-top: 2rem;
+    width: 70%;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 const ProjectDescription = styled.h2`
+  /* border: 1px solid red; */
   color: ${({ $themeColor }) => ($themeColor === 'light' ? '#000' : '#fff')};
   height: 100px;
   text-align: center;
-  margin-bottom: 1rem;
+  /* margin: 1rem; */
   transition: all 0.3s ease;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 70px;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+  }
 `;
 
 const ProjectHighlights = styled.div`
@@ -94,6 +139,25 @@ const ProjectHighlights = styled.div`
   font-size: 1.2rem;
   margin-bottom: 1rem;
   transition: all 0.3s ease;
+
+  @media screen and (max-width: 1200px) {
+    text-align: center;
+    list-style: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.7rem;
+  }
+`;
+
+const ProjectList = styled.ul`
+  @media screen and (max-width: 1200px) {
+    list-style: none;
+  }
 `;
 
 const ButtonWrapper = styled.div`
@@ -114,14 +178,41 @@ const ViewButton = styled.a`
   background-color: var(--mainGreen);
   color: #fff;
   text-decoration: none;
+
+  @media screen and (max-width: 768px) {
+    padding: 0.5rem 1.2rem;
+
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 0.2rem 0.5rem;
+
+    font-size: 0.7rem;
+  }
 `;
 
 const AerialLogo = styled(GiAerialSignal)`
   font-size: 2rem;
   margin-right: 1rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const GitHubLogo = styled(FaGithub)`
   font-size: 2rem;
   margin-right: 1rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.7rem;
+  }
 `;
