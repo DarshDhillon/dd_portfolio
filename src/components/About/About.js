@@ -23,7 +23,7 @@ const About = () => {
 export default About;
 
 const Container = styled.div`
-  margin-top: 8rem;
+  margin-top: 6rem;
   padding: 2rem 5rem;
   background: ${({ $themeColor }) =>
     $themeColor === 'light' ? 'var(--glassWhite)' : 'var(--glassCharcoal)'};

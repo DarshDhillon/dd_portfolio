@@ -2,9 +2,9 @@ import { createContext, useRef, useState } from 'react';
 export const AppContext = createContext();
 
 const ContextProvider = ({ children }) => {
-  const contactRef = useRef(null);
-  const projectsRef = useRef(null);
   const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
   const handleScrollToElement = (elementRef) => {
     window.scrollTo({

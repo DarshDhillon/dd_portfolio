@@ -8,13 +8,15 @@ import Projects from './components/ProjectsShowcase/Projects';
 import LearningTechs from './components/LearningTechs/LearningTechs';
 import ContactBox from './components/ContactBox/ContactBox';
 import Footer from './components/Footer/Footer';
+import MobileMenu from './components/MobileMenu/MobileMenu';
 
 const App = () => {
   return (
     <ContextProvider>
       <GlobalStyle />
-      <Header />
       <BackgroundTintWrapper>
+        <Header />
+        <MobileMenu />
         <About />
         <TechnologiesBar />
         <Projects />

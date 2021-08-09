@@ -10,7 +10,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterWrapper>
         <ScrollToTopIcon onClick={scrollToTop} />
-        <CopyWright>&copy; Darsh Dhillon {new Date().getFullYear()}</CopyWright>
+        <Copyright>&copy; D Dhillon {new Date().getFullYear()}</Copyright>
         <ScrollToTopIcon onClick={scrollToTop} />
       </FooterWrapper>
     </FooterContainer>
@@ -31,8 +31,8 @@ const FooterWrapper = styled.div`
   display: flex;
 `;
 
-const CopyWright = styled.p`
-  font-size: 1.1rem;
+const Copyright = styled.p`
+  font-size: 0.9rem;
   color: #fff;
 
   @media screen and (max-width: 768px) {
@@ -42,7 +42,7 @@ const CopyWright = styled.p`
 
 const ScrollToTopIcon = styled(IoIosArrowDropup)`
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0 1rem;
   color: #fff;
 

@@ -45,6 +45,10 @@ const HeaderContainer = styled.header`
   height: 5rem;
   width: 100%;
   transition: all 0.3s;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const HeaderWrapper = styled.div`

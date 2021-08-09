@@ -16,6 +16,7 @@ const ProjectShowcase = ({ selectedProject }) => {
           // autoPlay
           muted
           loop
+          controls
         />
         <ProjectInfoWrapper>
           <ProjectDescription $themeColor={themeColor}>
@@ -117,7 +118,7 @@ const ProjectDescription = styled.h2`
   color: ${({ $themeColor }) => ($themeColor === 'light' ? '#000' : '#fff')};
   height: 100px;
   text-align: center;
-  /* margin: 1rem; */
+  margin-bottom: 1rem;
   transition: all 0.3s ease;
 
   @media screen and (max-width: 768px) {
@@ -127,7 +128,6 @@ const ProjectDescription = styled.h2`
 
   @media screen and (max-width: 500px) {
     height: 70px;
-    margin-bottom: 1rem;
     font-size: 0.8rem;
   }
 `;

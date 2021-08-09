@@ -62,6 +62,10 @@ const Heading = styled.h3`
   @media screen and (max-width: 768px) {
     font-size: 1rem;
   }
+
+  @media screen and (max-width: 500px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const LogosWrapper = styled.div`
@@ -85,5 +89,9 @@ const TechLogo = styled.img`
 
   @media screen and (max-width: 768px) {
     width: 60px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 30px;
   }
 `;

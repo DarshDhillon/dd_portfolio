@@ -55,19 +55,20 @@ export default HeaderLinks;
 const LinksWrapper = styled.div`
   /* background-color: red; */
   padding: 1rem;
-  display: flex;
-  align-items: center;
-  width: 30%;
+  /* display: flex; */
+  /* align-items: center; */
+  /* width: 30%; */
 `;
 
 const LinksList = styled.ul`
-  width: 100%;
+  /* width: 100%; */
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   list-style: none;
 `;
 
 const LinkItem = styled.li`
+  margin: 0 2rem;
   color: ${({ $themeColor }) =>
     $themeColor === 'light' ? 'var(--mainCharcoal)' : '#fff'};
   cursor: pointer;
