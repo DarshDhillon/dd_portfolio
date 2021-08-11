@@ -44,7 +44,7 @@ const ScrollToTopIcon = styled(IoIosArrowDropup)`
   cursor: pointer;
   font-size: 1.2rem;
   margin: 0 1rem;
-  color: #fff;
+  color: var(--mainGreen);
 
   @media screen and (max-width: 768px) {
     font-size: 1rem;

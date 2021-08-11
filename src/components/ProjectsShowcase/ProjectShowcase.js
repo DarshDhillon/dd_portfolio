@@ -16,7 +16,7 @@ const ProjectShowcase = ({ selectedProject }) => {
           // autoPlay
           muted
           loop
-          controls
+          // controls
         />
         <ProjectInfoWrapper>
           <ProjectDescription $themeColor={themeColor}>
@@ -56,7 +56,7 @@ const ProjectShowcase = ({ selectedProject }) => {
 export default ProjectShowcase;
 
 const ProjectContainer = styled.div`
-  /* border: 1px solid red; */
+  /* border: 1px solid green; */
   margin-top: 2rem;
   padding: 2rem 1rem;
   width: 100%;
@@ -67,6 +67,7 @@ const ProjectWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  /* width: 100%; */
 
   @media screen and (max-width: 1200px) {
     flex-direction: column;
@@ -75,27 +76,30 @@ const ProjectWrapper = styled.div`
 
 const ProjectGallery = styled.video`
   height: 300px;
-  width: 500px;
+  width: 533px;
+  /* object-fit: contain; */
+  /* aspect-ratio: 16 / 9; */
 
   @media screen and (max-width: 1200px) {
-    height: 390px;
-    width: 650px;
+    height: 350px;
+    width: 622px;
   }
 
   @media screen and (max-width: 768px) {
     height: 250px;
-    width: 400px;
+    width: 444px;
   }
 
   @media screen and (max-width: 500px) {
     height: 150px;
-    width: 250px;
+    width: 267px;
   }
 `;
 
 const ProjectInfoWrapper = styled.div`
   /* border: 1px solid blue; */
   padding: 1rem 0rem;
+  /* height: 100%; */
   width: 40%;
   display: flex;
   flex-direction: column;

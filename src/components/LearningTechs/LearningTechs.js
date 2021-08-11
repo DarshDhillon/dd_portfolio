@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { AppContext } from '../../context/ContextProvider';
 import tsLogo from '../../assets/images/ts_logo.png';
 import nextjsLogoBlack from '../../assets/images/nextjs_logo.png';
-import nextjsLogoWhite from '../../assets/images/nextjs_logo2.png';
+import nextjsLogoWhite from '../../assets/images/nextjs_logo3.png';
 import reactNativeLogo from '../../assets/images/react_native_logo3.jpg';
 
 const LearningTechs = () => {

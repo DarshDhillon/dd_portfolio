@@ -1,25 +1,20 @@
-import { useContext } from 'react';
 import styled from 'styled-components';
-import { FiSun } from 'react-icons/fi';
+import { useContext } from 'react';
 import { BsMoon } from 'react-icons/bs';
+import { IoSunny } from 'react-icons/io5';
 import { AppContext } from '../../context/ContextProvider';
 
 const ThemeToggleSwitch = () => {
-  const { setThemeColor } = useContext(AppContext);
+  const { isActiveThemeButton, handleChangeThemeColor } =
+    useContext(AppContext);
 
   return (
-    <Container>
-      <SwitchInput type='checkbox' id='chk' />
-      <Label
-        onClick={() =>
-          setThemeColor((prev) => (prev === 'light' ? 'dark' : 'light'))
-        }
-        htmlFor='chk'
-      >
+    <Container $active={isActiveThemeButton} onClick={handleChangeThemeColor}>
+      <IconWrapper>
         <SunIcon />
         <MoonIcon />
-        <LabelBall></LabelBall>
-      </Label>
+      </IconWrapper>
+      <Icon $active={isActiveThemeButton} />
     </Container>
   );
 };
@@ -27,51 +22,44 @@ const ThemeToggleSwitch = () => {
 export default ThemeToggleSwitch;
 
 const Container = styled.div`
-  position: absolute;
-  right: 2rem;
-  top: 50%;
-  transform: translate(0, -50%);
-`;
-
-const Label = styled.label`
-  background-color: var(--mainGreen);
-  border-radius: 50px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
   position: relative;
-  height: 26px;
-  width: 50px;
-  transform: scale(1.5);
+  display: block;
+  width: 90px;
+  height: 45px;
+  border-radius: 160px;
+  background: var(--mainGreen);
+  transition: 0.3s;
+  cursor: pointer;
 `;
 
-const LabelBall = styled.div`
-  background-color: var(--mainCharcoal);
-  border-radius: 50%;
+const Icon = styled.i`
   position: absolute;
-  top: 2px;
-  left: 2px;
-  height: 22px;
-  width: 22px;
-  transform: translateX(0px);
-  transition: transform 0.2s linear;
+  top: 0;
+  left: ${({ $active }) => ($active ? '45px' : '0')};
+  width: 45px;
+  height: 45px;
+  background: ${({ $active }) => ($active ? ' white' : ' var(--mainCharcoal)')};
+
+  border-radius: 50%;
+  transform: scale(0.9);
+  transition: 0.3s;
 `;
 
 const MoonIcon = styled(BsMoon)`
+  font-size: 1.5rem;
   color: yellow;
 `;
 
-const SunIcon = styled(FiSun)`
+const SunIcon = styled(IoSunny)`
+  font-size: 1.5rem;
   color: yellow;
 `;
 
-const SwitchInput = styled.input`
-  opacity: 0;
-  position: absolute;
-
-  :checked + ${Label} ${LabelBall} {
-    transform: translateX(24px);
-  }
+const IconWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
 `;

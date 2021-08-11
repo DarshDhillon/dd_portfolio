@@ -53,17 +53,11 @@ const HeaderLinks = () => {
 export default HeaderLinks;
 
 const LinksWrapper = styled.div`
-  /* background-color: red; */
   padding: 1rem;
-  /* display: flex; */
-  /* align-items: center; */
-  /* width: 30%; */
 `;
 
 const LinksList = styled.ul`
-  /* width: 100%; */
   display: flex;
-  /* justify-content: space-around; */
   list-style: none;
 `;
 

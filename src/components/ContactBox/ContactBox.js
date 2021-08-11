@@ -37,7 +37,6 @@ const ContactBox = () => {
 export default ContactBox;
 
 const BoxContainer = styled.div`
-  /* border: 1px solid red; */
   margin-top: 12rem;
   background: ${({ $themeColor }) =>
     $themeColor === 'light' ? 'var(--glassWhite)' : 'var(--glassCharcoal)'};
@@ -124,7 +123,6 @@ const PhoneNumberBox = styled.div`
   background-color: #fff;
   top: 3%;
   left: 50%;
-  /* height: 100px; */
   width: 200px;
   font-size: 1.5rem;
   color: #000;

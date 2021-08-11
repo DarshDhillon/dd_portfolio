@@ -27,7 +27,9 @@ const Header = () => {
       <HeaderWrapper>
         <Logo src={dDLogo} alt='brand_logo' />
         <HeaderLinks />
-        <ThemeToggleSwitch />
+        <ToggleSwitchContainer>
+          <ThemeToggleSwitch />
+        </ToggleSwitchContainer>
       </HeaderWrapper>
     </HeaderContainer>
   );
@@ -60,4 +62,11 @@ const HeaderWrapper = styled.div`
 
 const Logo = styled.img`
   height: inherit;
+`;
+
+const ToggleSwitchContainer = styled.div`
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translate(0, -50%);
 `;

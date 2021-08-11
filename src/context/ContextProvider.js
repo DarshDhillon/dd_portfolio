@@ -15,6 +15,13 @@ const ContextProvider = ({ children }) => {
 
   const [themeColor, setThemeColor] = useState('dark');
 
+  const [isActiveThemeButton, setIsActiveThemeButton] = useState(false);
+
+  const handleChangeThemeColor = () => {
+    setIsActiveThemeButton((prev) => !prev);
+    setThemeColor((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -22,8 +29,9 @@ const ContextProvider = ({ children }) => {
         projectsRef,
         aboutRef,
         themeColor,
+        isActiveThemeButton,
+        handleChangeThemeColor,
         handleScrollToElement,
-        setThemeColor,
       }}
     >
       {children}

@@ -1,18 +1,19 @@
 import ffVideo from '../assets/videos/DD_PORT_FF_PREVIEW2.mp4';
 import vacVideo from '../assets/videos/DD_PORT_VAC_PREVIEW.mp4';
+import testVideo from '../assets/videos/video.mp4';
 
 const projectData = [
   {
     id: 1,
     projectTitle: 'happyhealth',
-    projectGallery: ffVideo,
+    projectGallery: testVideo,
     projectDescription:
       'A health-orientated website including recipe finder, meditation app and mock store',
     projectHighlights: [
       { id: 1, highlight: 'React (functional components with hooks)' },
-      { id: 2, highlight: 'Context API' },
+      { id: 2, highlight: 'Context API state management' },
       { id: 3, highlight: 'Custom hooks' },
-      { id: 4, highlight: 'Styled Components' },
+      { id: 4, highlight: 'Framer Motion animations' },
     ],
     projectLiveURL: 'http://www.google.com',
     projectGithubURL: 'http://www.github.com',
@@ -20,7 +21,7 @@ const projectData = [
   {
     id: 2,
     projectTitle: 'Vaccine Booker',
-    projectGallery: ffVideo,
+    projectGallery: vacVideo,
     projectDescription:
       'A COVID19 vaccine appointment booking app with user authentication',
     projectHighlights: [
@@ -35,14 +36,14 @@ const projectData = [
   {
     id: 3,
     projectTitle: 'Film Finder',
-    projectGallery: ffVideo,
+    projectGallery: testVideo,
     projectDescription:
-      'A film database app featuring photo reel and actor galleries, and search facility ',
+      'A film database app featuring a search facility, and photo reel/actor galleries ',
     projectHighlights: [
       { id: 1, highlight: 'React (functional components with hooks)' },
       { id: 2, highlight: 'Redux Toolkit with async middleware' },
-      { id: 3, highlight: 'Programmatical routing with React router' },
-      { id: 4, highlight: 'Pagination get requests' },
+      { id: 3, highlight: 'Programmatical React router routing' },
+      { id: 4, highlight: 'Styled Components CSS-in-JS' },
     ],
     projectLiveURL: 'http://www.bbc.com',
     projectGithubURL: 'http://www.sky.com',
