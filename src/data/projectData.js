@@ -1,12 +1,13 @@
-import ffVideo from '../assets/videos/DD_PORT_FF_PREVIEW2.mp4';
-import vacVideo from '../assets/videos/DD_PORT_VAC_PREVIEW.mp4';
-import testVideo from '../assets/videos/video.mp4';
+import HappyHealthPreviewVideo from '../assets/videos/DD-PORT_HH_PREVIEW1.mp4';
+import FilmFinderPreviewVideo from '../assets/videos/DD-PORT_FF_1.mp4';
+import TempChartPreviewVideo from '../assets/videos/DD-PORT_TEMP_CHARTS2.mp4';
+import VaccinePreviewVideo from '../assets/videos/DD-PORT_VAC_BOOK1.mp4';
 
 const projectData = [
   {
     id: 1,
     projectTitle: 'happyhealth',
-    projectGallery: testVideo,
+    projectGallery: HappyHealthPreviewVideo,
     projectDescription:
       'A health-orientated website including meal finder, meditation app and mock store',
     projectHighlights: [
@@ -21,7 +22,7 @@ const projectData = [
   {
     id: 2,
     projectTitle: 'Vaccine Booker',
-    projectGallery: vacVideo,
+    projectGallery: VaccinePreviewVideo,
     projectDescription:
       'A COVID19 vaccine appointment booking app with user authentication',
     projectHighlights: [
@@ -36,7 +37,7 @@ const projectData = [
   {
     id: 3,
     projectTitle: 'Film Finder',
-    projectGallery: testVideo,
+    projectGallery: FilmFinderPreviewVideo,
     projectDescription:
       'A film database app featuring a search facility and photo reel/actor galleries ',
     projectHighlights: [
@@ -51,7 +52,7 @@ const projectData = [
   {
     id: 4,
     projectTitle: '24hr Weather Chart',
-    projectGallery: ffVideo,
+    projectGallery: TempChartPreviewVideo,
     projectDescription: `A chart app illustrating weather temperatures for major global cities or the user's location`,
     projectHighlights: [
       { id: 1, highlight: 'React (functional components with hooks)' },

@@ -16,7 +16,7 @@ const ProjectShowcase = ({ selectedProject }) => {
           autoPlay
           muted
           loop
-          // controls
+          controls
         />
         <ProjectInfoWrapper>
           <ProjectDescription $themeColor={themeColor}>
