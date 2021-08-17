@@ -13,7 +13,7 @@ const ProjectShowcase = ({ selectedProject }) => {
         <ProjectGallery
           type='video/mp4'
           src={selectedProject.projectGallery}
-          // autoPlay
+          autoPlay
           muted
           loop
           // controls
@@ -56,7 +56,6 @@ const ProjectShowcase = ({ selectedProject }) => {
 export default ProjectShowcase;
 
 const ProjectContainer = styled.div`
-  /* border: 1px solid green; */
   margin-top: 2rem;
   padding: 2rem 1rem;
   width: 100%;
@@ -67,7 +66,6 @@ const ProjectWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* width: 100%; */
 
   @media screen and (max-width: 1200px) {
     flex-direction: column;
@@ -77,8 +75,6 @@ const ProjectWrapper = styled.div`
 const ProjectGallery = styled.video`
   height: 300px;
   width: 533px;
-  /* object-fit: contain; */
-  /* aspect-ratio: 16 / 9; */
 
   @media screen and (max-width: 1200px) {
     height: 350px;
@@ -97,9 +93,7 @@ const ProjectGallery = styled.video`
 `;
 
 const ProjectInfoWrapper = styled.div`
-  /* border: 1px solid blue; */
   padding: 1rem 0rem;
-  /* height: 100%; */
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -118,7 +112,6 @@ const ProjectInfoWrapper = styled.div`
 `;
 
 const ProjectDescription = styled.h2`
-  /* border: 1px solid red; */
   color: ${({ $themeColor }) => ($themeColor === 'light' ? '#000' : '#fff')};
   height: 100px;
   text-align: center;
@@ -165,7 +158,6 @@ const ProjectList = styled.ul`
 `;
 
 const ButtonWrapper = styled.div`
-  /* border: 1px solid black; */
   width: 100%;
   display: flex;
   justify-content: space-evenly;

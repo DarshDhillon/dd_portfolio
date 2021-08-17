@@ -137,7 +137,7 @@ const TextArea = styled.textarea`
 const SendButton = styled.button`
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
-  width: 30%;
+  width: 40%;
   margin: 0 auto;
   margin-top: 1rem;
   cursor: pointer;

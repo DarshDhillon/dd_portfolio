@@ -74,7 +74,6 @@ const MobileMenu = () => {
 export default MobileMenu;
 
 const MenuHeader = styled.div`
-  /* border: 1px solid blue; */
   padding: 2rem;
   width: 100%;
 `;
@@ -107,7 +106,6 @@ const MenuContainer = styled.div`
   left: ${({ $showMenu }) => ($showMenu ? '0' : '-100%')};
   top: 0;
   bottom: 0;
-  /* height: 100vh; */
   width: 100%;
   background-color: ${({ $themeColor }) =>
     $themeColor === 'light' ? '#e5e2e2' : 'var(--mainCharcoal)'};
@@ -122,7 +120,6 @@ const MenuContainer = styled.div`
 `;
 
 const MenuLinkList = styled.ul`
-  /* border: 1px solid red; */
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -152,7 +149,6 @@ const Logo = styled.img`
 `;
 
 const ToggleSwitchWrapper = styled.div`
-  /* border: 1px solid red; */
   position: absolute;
   top: 1.1rem;
   right: 2rem;

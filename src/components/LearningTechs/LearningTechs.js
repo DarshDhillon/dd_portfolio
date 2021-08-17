@@ -43,7 +43,6 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  /* border: 1px solid red; */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -69,7 +68,6 @@ const Heading = styled.h3`
 `;
 
 const LogosWrapper = styled.div`
-  /* border: 1px solid red; */
   width: 50%;
   display: flex;
   justify-content: space-evenly;

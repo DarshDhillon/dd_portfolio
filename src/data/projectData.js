@@ -8,7 +8,7 @@ const projectData = [
     projectTitle: 'happyhealth',
     projectGallery: testVideo,
     projectDescription:
-      'A health-orientated website including recipe finder, meditation app and mock store',
+      'A health-orientated website including meal finder, meditation app and mock store',
     projectHighlights: [
       { id: 1, highlight: 'React (functional components with hooks)' },
       { id: 2, highlight: 'Context API state management' },
@@ -38,7 +38,7 @@ const projectData = [
     projectTitle: 'Film Finder',
     projectGallery: testVideo,
     projectDescription:
-      'A film database app featuring a search facility, and photo reel/actor galleries ',
+      'A film database app featuring a search facility and photo reel/actor galleries ',
     projectHighlights: [
       { id: 1, highlight: 'React (functional components with hooks)' },
       { id: 2, highlight: 'Redux Toolkit with async middleware' },

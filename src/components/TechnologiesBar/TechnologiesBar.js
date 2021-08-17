@@ -17,8 +17,8 @@ const TechnologiesBar = () => {
         <ReactIcon title='ReactJS' />
         <ReduxIcon title='Redux' />
         <HTMLIcon title='HMTL5' />
-        <SassIcon title='SASS' />
         <NodeIcon title='Node.js' />
+        <SassIcon title='SASS' />
         <GitIcon title='Git' />
         <CSSIcon title='CSS' />
       </TechLogosWrapper>
