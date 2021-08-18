@@ -3,11 +3,17 @@ import FilmFinderPreviewVideo from '../assets/videos/DD-PORT_FF_1.mp4';
 import TempChartPreviewVideo from '../assets/videos/DD-PORT_TEMP_CHARTS2.mp4';
 import VaccinePreviewVideo from '../assets/videos/DD-PORT_VAC_BOOK1.mp4';
 
+import ChartResponsiveBg from '../assets/videos/CHART_RESPONSIVE_BG.mp4';
+import HHResponsiveBg from '../assets/videos/DD-PORT_HH_RESPONSIVE1.mp4';
+import FFResponsiveBG from '../assets/videos/DD-PORT_FF_RESPONSIVE.mp4';
+import VaccineResponsiveBg from '../assets/videos/DD-PORT_VAC_RESPONSIVE1.mp4';
+
 const projectData = [
   {
     id: 1,
     projectTitle: 'happyhealth',
-    projectGallery: HappyHealthPreviewVideo,
+    projectGalleryDesktop: HappyHealthPreviewVideo,
+    projectGalleryResponsive: HHResponsiveBg,
     projectDescription:
       'A health-orientated website including meal finder, meditation app and mock store',
     projectHighlights: [
@@ -22,7 +28,8 @@ const projectData = [
   {
     id: 2,
     projectTitle: 'Vaccine Booker',
-    projectGallery: VaccinePreviewVideo,
+    projectGalleryDesktop: VaccinePreviewVideo,
+    projectGalleryResponsive: VaccineResponsiveBg,
     projectDescription:
       'A COVID19 vaccine appointment booking app with user authentication',
     projectHighlights: [
@@ -37,7 +44,8 @@ const projectData = [
   {
     id: 3,
     projectTitle: 'Film Finder',
-    projectGallery: FilmFinderPreviewVideo,
+    projectGalleryDesktop: FilmFinderPreviewVideo,
+    projectGalleryResponsive: FFResponsiveBG,
     projectDescription:
       'A film database app featuring a search facility and photo reel/actor galleries ',
     projectHighlights: [
@@ -52,7 +60,8 @@ const projectData = [
   {
     id: 4,
     projectTitle: '24hr Weather Chart',
-    projectGallery: TempChartPreviewVideo,
+    projectGalleryDesktop: TempChartPreviewVideo,
+    projectGalleryResponsive: ChartResponsiveBg,
     projectDescription: `A chart app illustrating weather temperatures for major global cities or the user's location`,
     projectHighlights: [
       { id: 1, highlight: 'React (functional components with hooks)' },

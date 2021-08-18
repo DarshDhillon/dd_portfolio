@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { FaGithub } from 'react-icons/fa';
 import { GiAerialSignal } from 'react-icons/gi';
@@ -7,12 +7,18 @@ import { AppContext } from '../../context/ContextProvider';
 const ProjectShowcase = ({ selectedProject }) => {
   const { themeColor } = useContext(AppContext);
 
+  const [showResponsiveVideo, setShowResponsiveVideo] = useState(true);
+
   return (
     <ProjectContainer $themeColor={themeColor}>
       <ProjectWrapper>
         <ProjectGallery
           type='video/mp4'
-          src={selectedProject.projectGallery}
+          src={
+            showResponsiveVideo
+              ? selectedProject.projectGalleryResponsive
+              : selectedProject.projectGalleryDesktop
+          }
           autoPlay
           muted
           loop
