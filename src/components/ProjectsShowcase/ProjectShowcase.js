@@ -3,27 +3,35 @@ import styled from 'styled-components';
 import { FaGithub } from 'react-icons/fa';
 import { GiAerialSignal } from 'react-icons/gi';
 import { AppContext } from '../../context/ContextProvider';
+import { MdDesktopWindows, MdPhoneIphone } from 'react-icons/md';
 
 const ProjectShowcase = ({ selectedProject }) => {
   const { themeColor } = useContext(AppContext);
 
-  const [showResponsiveVideo, setShowResponsiveVideo] = useState(true);
+  const [showResponsiveVideo, setShowResponsiveVideo] = useState(false);
 
   return (
     <ProjectContainer $themeColor={themeColor}>
       <ProjectWrapper>
-        <ProjectGallery
-          type='video/mp4'
-          src={
-            showResponsiveVideo
-              ? selectedProject.projectGalleryResponsive
-              : selectedProject.projectGalleryDesktop
-          }
-          autoPlay
-          muted
-          loop
-          controls
-        />
+        <ProjectGalleryWrapper>
+          <ProjectGallery
+            type='video/mp4'
+            src={
+              showResponsiveVideo
+                ? selectedProject.projectGalleryResponsive
+                : selectedProject.projectGalleryDesktop
+            }
+            autoPlay
+            muted
+            loop
+            // controls
+          />
+          <VideoSelectorWrapper
+            onClick={() => setShowResponsiveVideo((prev) => !prev)}
+          >
+            {showResponsiveVideo ? <ComputerIcon /> : <ResponsiveIcon />}
+          </VideoSelectorWrapper>
+        </ProjectGalleryWrapper>
         <ProjectInfoWrapper>
           <ProjectDescription $themeColor={themeColor}>
             {selectedProject.projectDescription}
@@ -78,6 +86,10 @@ const ProjectWrapper = styled.div`
   }
 `;
 
+const ProjectGalleryWrapper = styled.div`
+  position: relative;
+`;
+
 const ProjectGallery = styled.video`
   height: 300px;
   width: 533px;
@@ -95,6 +107,39 @@ const ProjectGallery = styled.video`
   @media screen and (max-width: 500px) {
     height: 150px;
     width: 267px;
+  }
+`;
+
+const VideoSelectorWrapper = styled.div`
+  position: absolute;
+  cursor: pointer;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  background-color: var(--mainGreen);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ComputerIcon = styled(MdDesktopWindows)`
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #fff;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const ResponsiveIcon = styled(MdPhoneIphone)`
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #fff;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.5rem;
   }
 `;
 
