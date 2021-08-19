@@ -28,8 +28,13 @@ const ProjectShowcase = ({ selectedProject }) => {
           />
           <VideoSelectorWrapper
             onClick={() => setShowResponsiveVideo((prev) => !prev)}
+            $themeColor={themeColor}
           >
-            {showResponsiveVideo ? <ComputerIcon /> : <ResponsiveIcon />}
+            {showResponsiveVideo ? (
+              <ComputerIcon $themeColor={themeColor} />
+            ) : (
+              <ResponsiveIcon $themeColor={themeColor} />
+            )}
           </VideoSelectorWrapper>
         </ProjectGalleryWrapper>
         <ProjectInfoWrapper>
@@ -114,7 +119,7 @@ const VideoSelectorWrapper = styled.div`
   position: absolute;
   cursor: pointer;
   top: 1rem;
-  right: 1rem;
+  left: 1rem;
   padding: 0.5rem;
   background-color: var(--mainGreen);
   border-radius: 50%;

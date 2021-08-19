@@ -23,7 +23,7 @@ const projectData = [
       { id: 4, highlight: 'Framer Motion animations' },
     ],
     projectLiveURL: 'http://www.google.com',
-    projectGithubURL: 'http://www.github.com',
+    projectGithubURL: 'https://github.com/DarshDhillon/happyhealth',
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const projectData = [
       { id: 4, highlight: 'Firebase authentication with Firestore' },
     ],
     projectLiveURL: 'http://www.bbc.com',
-    projectGithubURL: 'http://www.sky.com',
+    projectGithubURL: 'https://github.com/DarshDhillon/vaccine_shn',
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ const projectData = [
       { id: 4, highlight: 'Styled Components CSS-in-JS' },
     ],
     projectLiveURL: 'http://www.bbc.com',
-    projectGithubURL: 'http://www.sky.com',
+    projectGithubURL: 'https://github.com/DarshDhillon/film_finder',
   },
   {
     id: 4,
@@ -70,7 +70,7 @@ const projectData = [
       { id: 4, highlight: 'SASS' },
     ],
     projectLiveURL: 'http://www.bbc.com',
-    projectGithubURL: 'http://www.sky.com',
+    projectGithubURL: 'https://github.com/DarshDhillon/weather_chart',
   },
 ];
 export default projectData;
