@@ -43,7 +43,7 @@ const projectData = [
   },
   {
     id: 3,
-    projectTitle: 'Film Finder',
+    projectTitle: 'FilmFinder',
     projectGalleryDesktop: FilmFinderPreviewVideo,
     projectGalleryResponsive: FFResponsiveBG,
     projectDescription:
