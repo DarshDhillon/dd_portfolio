@@ -22,7 +22,7 @@ const ContactBox = () => {
             <Anchor onClick={() => setShowPhoneNumberbox((prev) => !prev)}>
               <PhoneIcon />
             </Anchor>
-            <Anchor rel='noreferrer' href='mailto:someone@yoursite.com'>
+            <Anchor rel='noreferrer' href='mailto:contact@darshdhillon.co.uk'>
               <EmailIcon />
             </Anchor>
           </CTAIconsWrapper>

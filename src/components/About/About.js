@@ -11,8 +11,8 @@ const About = () => {
       <SubTextWrapper>
         <SubText $themeColor={themeColor}>
           I'm DARSH DHILLON, a ReactJS front-end web developer based in London,
-          UK. I specialise in MERN stack architecture, responsive front-end
-          designs, and meticulous problem-solving.
+          UK. I’m focused on crafting clean and user‑friendly experiences, and
+          meticulous problem-solving.
         </SubText>
       </SubTextWrapper>
       <Heading>{`}`}</Heading>
