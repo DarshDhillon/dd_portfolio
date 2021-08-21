@@ -1,19 +1,21 @@
-import HappyHealthPreviewVideo from '../assets/videos/DD-PORT_HH_PREVIEW1.mp4';
-import FilmFinderPreviewVideo from '../assets/videos/DD-PORT_FF_1.mp4';
-import TempChartPreviewVideo from '../assets/videos/DD-PORT_TEMP_CHARTS2.mp4';
-import VaccinePreviewVideo from '../assets/videos/DD-PORT_VAC_BOOK1.mp4';
+import hh1 from '../assets/videos/hh1.mp4';
+import hh2 from '../assets/videos/hh2.mp4';
 
-import ChartResponsiveBg from '../assets/videos/CHART_RESPONSIVE_BG.mp4';
-import HHResponsiveBg from '../assets/videos/DD-PORT_HH_RESPONSIVE1.mp4';
-import FFResponsiveBG from '../assets/videos/DD-PORT_FF_RESPONSIVE.mp4';
-import VaccineResponsiveBg from '../assets/videos/DD-PORT_VAC_RESPONSIVE1.mp4';
+import ff1 from '../assets/videos/ff1.mp4';
+import ff2 from '../assets/videos/ff2.mp4';
+
+import charts1 from '../assets/videos/charts1.mp4';
+import charts2 from '../assets/videos/charts2.mp4';
+
+import vac1 from '../assets/videos/vac1.mp4';
+import vac2 from '../assets/videos/vac2.mp4';
 
 const projectData = [
   {
     id: 1,
     projectTitle: 'happyhealth',
-    projectGalleryDesktop: HappyHealthPreviewVideo,
-    projectGalleryResponsive: HHResponsiveBg,
+    projectGalleryDesktop: hh1,
+    projectGalleryResponsive: hh2,
     projectDescription:
       'A health-orientated website including meal finder, meditation app and mock store',
     projectHighlights: [
@@ -28,8 +30,8 @@ const projectData = [
   {
     id: 2,
     projectTitle: 'Vaccine Booker',
-    projectGalleryDesktop: VaccinePreviewVideo,
-    projectGalleryResponsive: VaccineResponsiveBg,
+    projectGalleryDesktop: vac1,
+    projectGalleryResponsive: vac2,
     projectDescription:
       'A COVID19 vaccine appointment booking app with user authentication',
     projectHighlights: [
@@ -44,8 +46,8 @@ const projectData = [
   {
     id: 3,
     projectTitle: 'FilmFinder',
-    projectGalleryDesktop: FilmFinderPreviewVideo,
-    projectGalleryResponsive: FFResponsiveBG,
+    projectGalleryDesktop: ff1,
+    projectGalleryResponsive: ff2,
     projectDescription:
       'A film database app featuring a search facility and photo reel/actor galleries ',
     projectHighlights: [
@@ -60,8 +62,8 @@ const projectData = [
   {
     id: 4,
     projectTitle: '24hr Weather Chart',
-    projectGalleryDesktop: TempChartPreviewVideo,
-    projectGalleryResponsive: ChartResponsiveBg,
+    projectGalleryDesktop: charts1,
+    projectGalleryResponsive: charts2,
     projectDescription: `A chart app illustrating weather temperatures for major global cities or the user's location`,
     projectHighlights: [
       { id: 1, highlight: 'React (functional components with hooks)' },
